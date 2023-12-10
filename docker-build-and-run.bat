@@ -1,8 +1,8 @@
 call mvn clean install
 
-docker rm -f ms-credentials-manager
+call docker rm -f ms-credentials-manager
 
-docker image rm darren/ms-credentials-manager
+call docker image rm darren/ms-credentials-manager
 
 call docker build . -t darren/ms-credentials-manager
 
