@@ -23,22 +23,26 @@ public class EncryptDecryptService {
     @Value(("${security.encrypt.encoded.algorithm}"))
     private String algorithm;
 
-    public String encrypt(String input) throws Exception {
+    public String encrypt(String plainTextPassword) throws Exception {
         SecretKey secretKey = AesUtil.getSecretKey(encodedKey);
         IvParameterSpec ivParameterSpec = AesUtil.getIv(encodedParameter);
         Cipher cipher = Cipher.getInstance(algorithm);
         cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivParameterSpec);
-        byte[] cipherText = cipher.doFinal(input.getBytes());
+        byte[] cipherText = cipher.doFinal(plainTextPassword.getBytes());
         return Base64.getEncoder().encodeToString(cipherText);
     }
 
-    public String decrypt(String cipherText) throws Exception {
+    public String decrypt(String encryptedPassword) throws Exception {
         SecretKey secretKey = AesUtil.getSecretKey(encodedKey);
         IvParameterSpec ivParameterSpec = AesUtil.getIv(encodedParameter);
         Cipher cipher = Cipher.getInstance(algorithm);
         cipher.init(Cipher.DECRYPT_MODE, secretKey, ivParameterSpec);
-        byte[] plainText = cipher.doFinal(Base64.getDecoder().decode(cipherText));
+        byte[] plainText = cipher.doFinal(Base64.getDecoder().decode(encryptedPassword));
         return new String(plainText);
+    }
+
+    public boolean match(String plainTextPassword, String encryptedPassword) throws Exception {
+        return encrypt(plainTextPassword).equals(encryptedPassword);
     }
 
 }

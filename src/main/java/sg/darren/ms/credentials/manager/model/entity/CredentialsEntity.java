@@ -1,4 +1,4 @@
-package sg.darren.ms.credentials.manager.model;
+package sg.darren.ms.credentials.manager.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,10 +25,10 @@ public class CredentialsEntity {
     private Long id;
 
     @Column(name = "app_name", nullable = false)
-    private String app_name;
+    private String appName;
 
     @Column(name = "login_id")
-    private String login_id;
+    private String loginId;
 
     @Column(name = "password", nullable = false)
     private String password;
