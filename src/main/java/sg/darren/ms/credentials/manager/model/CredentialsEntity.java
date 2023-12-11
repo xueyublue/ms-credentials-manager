@@ -1,4 +1,4 @@
-package sg.darren.ms.event.tracker.model;
+package sg.darren.ms.credentials.manager.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

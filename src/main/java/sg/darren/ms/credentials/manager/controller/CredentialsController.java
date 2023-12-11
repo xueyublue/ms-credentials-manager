@@ -1,4 +1,4 @@
-package sg.darren.ms.event.tracker.controller;
+package sg.darren.ms.credentials.manager.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

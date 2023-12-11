@@ -1,4 +1,4 @@
-package sg.darren.ms.event.tracker.util;
+package sg.darren.ms.credentials.manager.util;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;

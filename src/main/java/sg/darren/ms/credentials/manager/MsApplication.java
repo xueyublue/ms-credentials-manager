@@ -1,4 +1,4 @@
-package sg.darren.ms.event.tracker;
+package sg.darren.ms.credentials.manager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

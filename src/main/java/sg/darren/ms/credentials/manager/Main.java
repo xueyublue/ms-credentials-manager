@@ -1,4 +1,4 @@
-package sg.darren.ms.event.tracker;
+package sg.darren.ms.credentials.manager;
 
 public class Main {
 

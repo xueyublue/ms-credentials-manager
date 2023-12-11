@@ -1,4 +1,4 @@
-package sg.darren.ms.event.tracker.service;
+package sg.darren.ms.credentials.manager.service;
 
 import org.springframework.stereotype.Service;
 
